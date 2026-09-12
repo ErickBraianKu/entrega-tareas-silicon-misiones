@@ -1,0 +1,79 @@
+:root {
+  --color-page: #d5e1ef;
+  --color-card: #ffffff;
+  --color-title: #1f314f;
+  --color-text: #68778d;
+  --color-shadow: rgba(31, 49, 79, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background-color: var(--color-page);
+  font-family: "Outfit", Arial, sans-serif;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.qr-card {
+  width: 100%;
+  max-width: 320px;
+  padding: 16px 16px 40px;
+  background-color: var(--color-card);
+  border-radius: 20px;
+  box-shadow: 0 24px 48px var(--color-shadow);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.qr-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 56px rgba(31, 49, 79, 0.2);
+}
+
+.qr-card img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.qr-card h1 {
+  margin: 24px 0 16px;
+  color: var(--color-title);
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.qr-card p {
+  margin: 0;
+  padding: 0 16px;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+@media (max-width: 380px) {
+  body {
+    padding: 16px;
+  }
+
+  .qr-card {
+    padding-bottom: 32px;
+  }
+
+  .qr-card h1 {
+    font-size: 20px;
+  }
+}

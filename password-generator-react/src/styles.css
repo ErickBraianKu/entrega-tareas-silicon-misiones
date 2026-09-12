@@ -1,0 +1,301 @@
+:root {
+  --color-page: #101820;
+  --color-panel: #182330;
+  --color-panel-soft: #223142;
+  --color-border: #34465b;
+  --color-text: #eef6ff;
+  --color-muted: #9fb0c4;
+  --color-accent: #b9f227;
+  --color-accent-dark: #8cc915;
+  --color-danger: #ff6b6b;
+  --color-medium: #f8d24e;
+  --color-strong: #36d399;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(185, 242, 39, 0.12), transparent 34%),
+    var(--color-page);
+  color: var(--color-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.app {
+  width: min(100%, 560px);
+}
+
+header {
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.etiqueta {
+  margin: 0 0 8px;
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.15;
+}
+
+.tarjeta {
+  padding: 26px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-panel);
+  box-shadow: 0 24px 70px var(--shadow);
+}
+
+.visor {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.visor input {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-panel-soft);
+  color: var(--color-text);
+  font-size: 20px;
+  font-weight: 700;
+  outline: none;
+}
+
+.visor input::placeholder {
+  color: #74859a;
+}
+
+.visor input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(185, 242, 39, 0.16);
+}
+
+.boton-copiar {
+  min-height: 56px;
+  padding: 0 16px;
+  border: 1px solid var(--color-accent);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--color-accent);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.boton-copiar:hover {
+  background: rgba(185, 242, 39, 0.12);
+}
+
+.copiado {
+  position: absolute;
+  right: 0;
+  bottom: -22px;
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+form {
+  display: grid;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.control-longitud label,
+.fortaleza span {
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.control-longitud strong {
+  color: var(--color-accent);
+  font-size: 30px;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 14px;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.opciones {
+  display: grid;
+  gap: 12px;
+}
+
+.opcion {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.opcion input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.fortaleza strong {
+  font-size: 18px;
+}
+
+.barra-fortaleza {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.barra-fortaleza span {
+  height: 10px;
+  border-radius: 999px;
+  background: #34465b;
+}
+
+.barra-fortaleza span.activo.nivel-1 {
+  background: var(--color-danger);
+}
+
+.barra-fortaleza span.activo.nivel-2 {
+  background: #ff9f43;
+}
+
+.barra-fortaleza span.activo.nivel-3 {
+  background: var(--color-medium);
+}
+
+.barra-fortaleza span.activo.nivel-4 {
+  background: var(--color-strong);
+}
+
+.error {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 107, 107, 0.45);
+  border-radius: 10px;
+  background: rgba(255, 107, 107, 0.12);
+  color: var(--color-danger);
+  font-weight: 700;
+}
+
+.boton-generar {
+  width: 100%;
+  min-height: 54px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--color-accent);
+  color: #17210a;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-generar:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(185, 242, 39, 0.45);
+  outline-offset: 3px;
+}
+
+.historial {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-border);
+}
+
+.historial h2 {
+  margin: 0 0 12px;
+  color: var(--color-muted);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.historial ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.historial li {
+  overflow-wrap: anywhere;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--color-panel-soft);
+  color: var(--color-text);
+  font-family: "Courier New", monospace;
+}
+
+@media (max-width: 520px) {
+  main {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .tarjeta {
+    padding: 20px;
+  }
+
+  .visor {
+    grid-template-columns: 1fr;
+  }
+
+  .boton-copiar {
+    width: 100%;
+  }
+}
